@@ -318,7 +318,7 @@ static void zmk_rgb_underglow_effect_kinesis() {
     }
 #else
     // leds for peripheral(right) side
-    if (zmk_ble_active_profile_is_open()) {
+    /* if (zmk_ble_active_profile_is_open()) {
         pixels[0].r = CONFIG_ZMK_RGB_UNDERGLOW_BRT_SCALE * last_ble_state[0];
         pixels[0].g = 0;
         pixels[0].b = 0;
@@ -333,7 +333,8 @@ static void zmk_rgb_underglow_effect_kinesis() {
             state.animation_step = 0;
         }
         state.animation_step++;
-    } else if (!zmk_split_bt_peripheral_is_connected()) {
+    } else */
+    if (!zmk_split_bt_peripheral_is_connected()) {
         pixels[0].r = CONFIG_ZMK_RGB_UNDERGLOW_BRT_SCALE * last_ble_state[1];
         pixels[0].g = 0;
         pixels[0].b = 0;
